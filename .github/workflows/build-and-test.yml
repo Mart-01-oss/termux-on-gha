@@ -55,7 +55,7 @@ jobs:
           /entrypoint.sh pkg install -y ninja clang python git
           /entrypoint.sh pip install meson
           /entrypoint.sh pkg install -y tur-repo x11-repo
-          /entrypoint.sh pkg install -y fontconfig freetype krb5 libandroid-spawn libc++ libgmp libgnutls libxcb libxcomposite libxcursor libxfixes libxrender opengl pulseaudio sdl2 xorg-xrandr
+          /entrypoint.sh pkg install -y clang pkg-config alsa-lib pulseaudio fontconfig freetype gnutls mesa libx11 libxcursor libxfixes libxi libxrandr libxrender libxext vulkan-loader gstreamer gst-plugins-base sdl2 gst-plugins-good xorgproto
       - name: tar imagefs
         run: tar cf termuxfs.tar /data/data/com.termux/files/usr
       - uses: actions/upload-artifact@v4.6.0
