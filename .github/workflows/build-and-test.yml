@@ -56,12 +56,12 @@ jobs:
           /entrypoint.sh pip install meson
           /entrypoint.sh pkg install -y tur-repo x11-repo
           /entrypoint.sh pkg install -y fontconfig freetype krb5 libandroid-spawn libc++ libgmp libgnutls libxcb libxcomposite libxcursor libxfixes libxrender opengl pulseaudio sdl2 xorg-xrandr
-      - name: build
-        run: touch artifact
+      - name: tar imagefs
+        run: tar cf termuxfs.tar /data/data/com.termux/files/usr
       - uses: actions/upload-artifact@v4.6.0
         with:
           name: artifact-${{ matrix.architecture }}
-          path: artifact
+          path: ./termuxfs.tar
 
   # This is the ideal way termux-docker would work with GHA.
   broken-ideal:
