@@ -55,6 +55,7 @@ jobs:
           /entrypoint.sh pkg install -y ninja clang python git
           /entrypoint.sh pip install meson
           /entrypoint.sh pkg install -y tur-repo x11-repo
+          /entrypoint.sh pkg install -y fontconfig freetype krb5 libandroid-spawn libc++ libgmp libgnutls libxcb libxcomposite libxcursor libxfixes libxrender opengl pulseaudio sdl2 xorg-xrandr
       - name: build
         run: touch artifact
       - uses: actions/upload-artifact@v4.6.0
