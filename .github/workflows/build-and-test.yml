@@ -63,6 +63,16 @@ jobs:
           name: artifact-${{ matrix.architecture }}
           path: ./termuxfs.tar
 
+      - name: "Create Release"
+        if: github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+         name: "termuxfs"
+         tag_name: "test"
+         prerelease: false
+         files: |
+          ./termuxfs.tar
+
   # This is the ideal way termux-docker would work with GHA.
   broken-ideal:
     if: false
