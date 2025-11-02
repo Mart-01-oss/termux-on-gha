@@ -69,15 +69,15 @@ jobs:
         with:
          name: "termuxfs"
          tag_name: "test"
-         prerelease: false
+         prerelease: true
          files: |
           ./termuxfs.tar
 
   # This is the ideal way termux-docker would work with GHA.
   broken-ideal:
-    if: false
+    if: true
     runs-on: ubuntu-latest
-    container: termux/termux-docker:x86_64
+    container: termux/termux-docker:aarch64
     steps:
       - name: setup
         run: |
