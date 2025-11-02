@@ -75,7 +75,7 @@ jobs:
 
   # This is the ideal way termux-docker would work with GHA.
   broken-ideal:
-    if: true
+    if: false
     runs-on: ubuntu-latest
     container: termux/termux-docker:aarch64
     steps:
